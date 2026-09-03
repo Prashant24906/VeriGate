@@ -1,4 +1,11 @@
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+// In the browser: always use the Next.js rewrite proxy (/api/backend → FastAPI).
+// This works both locally (next dev rewrites to localhost:8000) and on Vercel
+// (next rewrites to NEXT_PUBLIC_API_URL which should be the deployed backend URL).
+// In server components/actions use the direct URL so it works server-side too.
+const API_BASE =
+  typeof window === "undefined"
+    ? process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"
+    : "/api/backend";
 
 export interface ScreeningResult {
   screening_id: string;
