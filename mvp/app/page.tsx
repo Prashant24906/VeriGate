@@ -216,7 +216,8 @@ export default function HomePage() {
             }}>
               VeriGate AI is a modular, multi-layer identity screening platform using OCR,
               image forensics, facial verification, and explainable risk scoring — built for
-              border security, passport control, and fraud detection.
+              border security, passport control, and fraud detection. 
+              
             </p>
 
             {/* CTAs */}
