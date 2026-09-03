@@ -58,6 +58,14 @@ export interface RecentScreening {
   risk_score: number;
   risk_level: string;
   recommendation: string;
+  // MongoDB-flattened fields written by /api/screenings POST handler
+  _holderName?: string;
+  _passportNumber?: string;
+  _riskScore?: number;
+  _riskLevel?: string;
+  _recommendation?: string;
+  _tampered?: boolean;
+  _faceMatch?: boolean;
 }
 
 export async function screenDocument(

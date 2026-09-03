@@ -169,8 +169,8 @@ export default function DashboardPage() {
                     <td className="ts-cell">
                       {new Date(s.timestamp).toLocaleString()}
                     </td>
-                    <td>{(s as Record<string, unknown>)._holderName as string || "—"}</td>
-                    <td><code>{(s as Record<string, unknown>)._passportNumber as string || s.passport_number || "—"}</code></td>
+                    <td>{s._holderName || s.holder_name || "—"}</td>
+                    <td><code>{s._passportNumber || s.passport_number || "—"}</code></td>
                     <td>
                       <span
                         className="risk-badge"
@@ -184,7 +184,7 @@ export default function DashboardPage() {
                       </span>
                     </td>
                     <td style={{ color: riskColors[s.risk_level] }}>
-                      {Math.round((s as Record<string, unknown>)._riskScore as number ?? s.risk_score ?? 0)}
+                      {Math.round(s._riskScore ?? s.risk_score ?? 0)}
                     </td>
                     <td className="rec-cell">{s.recommendation}</td>
                     <td>

@@ -78,7 +78,7 @@ export default function ResultPanel({ result }: ResultPanelProps) {
         transition={{ duration: 0.5 }}
       >
         <RiskGauge
-          score={Math.round(risk.overall_risk_score ?? risk.score ?? 0)}
+          score={Math.round(risk.overall_risk_score ?? 0)}
           level={risk.risk_level ?? "LOW"}
           recommendation={risk.recommendation ?? "Proceed"}
         />
