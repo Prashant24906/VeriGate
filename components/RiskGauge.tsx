@@ -9,10 +9,10 @@ interface RiskGaugeProps {
 }
 
 const levelConfig = {
-  LOW: { color: "#00ff88", label: "Low Risk", glow: "0 0 30px rgba(0,255,136,0.4)" },
-  MEDIUM: { color: "#ffd700", label: "Medium Risk", glow: "0 0 30px rgba(255,215,0,0.4)" },
-  HIGH: { color: "#ff6b35", label: "High Risk", glow: "0 0 30px rgba(255,107,53,0.4)" },
-  CRITICAL: { color: "#ff1744", label: "Critical Risk", glow: "0 0 30px rgba(255,23,68,0.4)" },
+  LOW: { color: "#1F5C4A", label: "Low Risk", glow: "0 0 20px rgba(31,92,74,0.25)" },
+  MEDIUM: { color: "#D98A1F", label: "Medium Risk", glow: "0 0 20px rgba(217,138,31,0.3)" },
+  HIGH: { color: "#E85D42", label: "High Risk", glow: "0 0 20px rgba(232,93,66,0.3)" },
+  CRITICAL: { color: "#C0392B", label: "Critical Risk", glow: "0 0 20px rgba(192,57,43,0.35)" },
 };
 
 export default function RiskGauge({ score, level, recommendation }: RiskGaugeProps) {
@@ -33,7 +33,7 @@ export default function RiskGauge({ score, level, recommendation }: RiskGaugePro
         <svg height={radius * 2} width={radius * 2} style={{ transform: "rotate(135deg)" }}>
           {/* Track */}
           <circle
-            stroke="rgba(255,255,255,0.08)"
+            stroke="rgba(23,31,51,0.1)"
             fill="transparent"
             strokeWidth={stroke}
             strokeDasharray={`${arcLength} ${circumference}`}

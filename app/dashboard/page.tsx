@@ -7,10 +7,10 @@ import { LayoutDashboard, TrendingUp, AlertTriangle, ShieldCheck, RefreshCw, Ext
 import Link from "next/link";
 
 const riskColors: Record<string, string> = {
-  LOW: "#00ff88",
-  MEDIUM: "#ffd700",
-  HIGH: "#ff6b35",
-  CRITICAL: "#ff1744",
+  LOW: "#1F5C4A",
+  MEDIUM: "#D98A1F",
+  HIGH: "#E85D42",
+  CRITICAL: "#C0392B",
 };
 
 function StatCard({ label, value, icon: Icon, color, delay }: {
@@ -91,28 +91,28 @@ export default function DashboardPage() {
             label="Total Screenings"
             value={stats.total ?? 0}
             icon={ShieldCheck}
-            color="#00d4ff"
+            color="#1F5C4A"
             delay={0}
           />
           <StatCard
             label="High Risk Detected"
             value={stats.high_risk ?? 0}
             icon={AlertTriangle}
-            color="#ff6b35"
+            color="#E85D42"
             delay={0.1}
           />
           <StatCard
             label="Pass Rate"
             value={`${((stats.pass_rate ?? 0) * 100).toFixed(1)}%`}
             icon={TrendingUp}
-            color="#00ff88"
+            color="#3FA582"
             delay={0.2}
           />
           <StatCard
             label="Tampered Docs"
             value={stats.tampered_count ?? 0}
             icon={ShieldCheck}
-            color="#a78bfa"
+            color="#D98A1F"
             delay={0.3}
           />
         </div>
